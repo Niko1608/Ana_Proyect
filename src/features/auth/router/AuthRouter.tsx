@@ -18,7 +18,7 @@ const AuthRouter = () => (
         title: 'Login',
         headerTitleAlign: 'center',
         headerLeft: () => (
-          <IconButton icon="arrow-left" onPress={() => navigation.goBack()} />
+          <IconButton icon="chevron-left" onPress={() => navigation.goBack()} />
         ),
       })}
     />
@@ -29,7 +29,7 @@ const AuthRouter = () => (
         title: 'Register',
         headerTitleAlign: 'center',
         headerLeft: () => (
-          <IconButton icon="arrow-left" onPress={() => navigation.goBack()} />
+          <IconButton icon="chevron-left" onPress={() => navigation.goBack()} />
         ),
       })}
     />
