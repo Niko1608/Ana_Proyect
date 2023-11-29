@@ -12,17 +12,6 @@ const Stack = createNativeStackNavigator<AuthRoutesProps>()
 const AuthRouter = () => (
   <Stack.Navigator>
     <Stack.Screen
-      name={AuthRoutes.Login}
-      component={Login}
-      options={({ navigation }) => ({
-        title: 'Login',
-        headerTitleAlign: 'center',
-        headerLeft: () => (
-          <IconButton icon="arrow-left" onPress={() => navigation.goBack()} />
-        ),
-      })}
-    />
-    <Stack.Screen
       name={AuthRoutes.Register}
       component={Register}
       options={({ navigation }) => ({
@@ -33,6 +22,18 @@ const AuthRouter = () => (
         ),
       })}
     />
+    <Stack.Screen
+      name={AuthRoutes.Login}
+      component={Login}
+      options={({ navigation }) => ({
+        title: 'Login',
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <IconButton icon="arrow-left" onPress={() => navigation.goBack()} />
+        ),
+      })}
+    />
+
     <Stack.Screen
       name={AuthRoutes.Start}
       component={Start}
