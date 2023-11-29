@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import React from 'react'
 import { View, Text } from 'react-native'
 
 import { AdminRoutes, AdminRoutesProps } from './types'
@@ -21,7 +22,11 @@ const AppRouter = () => (
       <Stack.Screen
         name={AdminRoutes.Auth}
         component={AuthRouter}
-        options={{ title: 'Authentication', headerTitleAlign: 'center' }}
+        options={{
+          title: 'Authentication',
+          headerTitleAlign: 'center',
+          headerShown: false,
+        }}
       />
       <Stack.Screen
         name={AdminRoutes.Home}
