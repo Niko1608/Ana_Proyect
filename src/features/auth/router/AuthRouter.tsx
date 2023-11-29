@@ -14,13 +14,11 @@ const AuthRouter = () => (
     <Stack.Screen
       name={AuthRoutes.Start}
       component={Start}
-      options={{ title: 'Start', headerTitleAlign: 'center' }}
-    />
-
-    <Stack.Screen
-      name={AuthRoutes.Start}
-      component={Start}
-      options={{ title: 'Start', headerTitleAlign: 'center' }}
+      options={{
+        title: 'Start',
+        headerTitleAlign: 'center',
+        headerShown: false,
+      }}
     />
 
     <Stack.Screen
@@ -30,10 +28,14 @@ const AuthRouter = () => (
         title: 'Register',
         headerTitleAlign: 'center',
         headerLeft: () => (
-          <IconButton icon="chevron-left" onPress={() => navigation.goBack()} />
+          <IconButton
+            icon="chevron-left"
+            onPress={() => navigation.goBack(Start)}
+          />
         ),
       })}
     />
+
     <Stack.Screen
       name={AuthRoutes.Login}
       component={Login}
@@ -41,15 +43,12 @@ const AuthRouter = () => (
         title: 'Login',
         headerTitleAlign: 'center',
         headerLeft: () => (
-          <IconButton icon="chevron-left" onPress={() => navigation.goBack()} />
+          <IconButton
+            icon="chevron-left"
+            onPress={() => navigation.goBack(Start)}
+          />
         ),
       })}
-    />
-
-    <Stack.Screen
-      name={AuthRoutes.Start}
-      component={Start}
-      options={{ title: 'Start', headerTitleAlign: 'center' }}
     />
   </Stack.Navigator>
 )
