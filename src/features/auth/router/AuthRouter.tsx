@@ -1,9 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import React from 'react'
+import { IconButton } from 'react-native-paper'
 
 import { AuthRoutes, AuthRoutesProps } from './types'
-import { Login } from '../login'
-import { Register } from '../register'
-import { Start } from '../start/index'
+import Login from '../login'
+import Register from '../register'
+import Start from '../start/index'
 
 const Stack = createNativeStackNavigator<AuthRoutesProps>()
 
@@ -12,12 +14,24 @@ const AuthRouter = () => (
     <Stack.Screen
       name={AuthRoutes.Login}
       component={Login}
-      options={{ title: 'Login', headerTitleAlign: 'center' }}
+      options={({ navigation }) => ({
+        title: 'Login',
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <IconButton icon="arrow-left" onPress={() => navigation.goBack()} />
+        ),
+      })}
     />
     <Stack.Screen
       name={AuthRoutes.Register}
       component={Register}
-      options={{ title: 'Register', headerTitleAlign: 'center' }}
+      options={({ navigation }) => ({
+        title: 'Register',
+        headerTitleAlign: 'center',
+        headerLeft: () => (
+          <IconButton icon="arrow-left" onPress={() => navigation.goBack()} />
+        ),
+      })}
     />
     <Stack.Screen
       name={AuthRoutes.Start}
