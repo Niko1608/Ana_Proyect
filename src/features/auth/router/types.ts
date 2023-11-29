@@ -6,11 +6,13 @@ import { AdminRoutes, AppNavigation } from './../../router/types'
 export enum AuthRoutes {
   Login = 'login',
   Register = 'register',
+  Start = 'start',
 }
 
 export type AuthRoutesProps = {
   login: undefined
   register: undefined
+  start: undefined
 }
 
 export type AuthNavigation<CurrentRoute extends keyof AuthRoutesProps> =

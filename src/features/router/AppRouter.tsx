@@ -21,12 +21,12 @@ const AppRouter = () => (
       <Stack.Screen
         name={AdminRoutes.Auth}
         component={AuthRouter}
-        options={{ headerTitleAlign: 'center' }}
+        options={{ title: 'Authentication', headerTitleAlign: 'center' }}
       />
       <Stack.Screen
         name={AdminRoutes.Home}
         component={Home}
-        options={{ headerTitleAlign: 'center' }}
+        options={{ title: 'Home', headerTitleAlign: 'center' }}
       />
     </Stack.Navigator>
   </NavigationContainer>
