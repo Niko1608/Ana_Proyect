@@ -1,12 +1,8 @@
 import { useForm, Controller } from 'react-hook-form'
-import {
-  DefaultTheme,
-  Provider as PaperProvider,
-  Text,
-} from 'react-native-paper'
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
 
 import {
-  BotonRegister,
+  ButtonRegister,
   ContainerRegister,
   ImageRegister,
   InputRegister,
@@ -50,9 +46,12 @@ const Register = () => {
           label="Confirm Password"
           theme={{ colors: { primary: '#635a51' } }}
         />
-        <BotonRegister onPress={() => console.log('Pressed')}>
+        <ButtonRegister
+          onPress={() => console.log('Pressed')}
+          style={{ backgroundColor: '#BB816B' }}
+        >
           Register
-        </BotonRegister>
+        </ButtonRegister>
       </ContainerRegister>
     </PaperProvider>
   )
