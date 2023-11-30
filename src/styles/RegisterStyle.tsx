@@ -1,10 +1,11 @@
 import styled from '@emotion/native'
-import { Text, TextInput, Button } from 'react-native-paper'
 import { Image } from 'react-native'
+import { Text, TextInput } from 'react-native-paper'
 
 export const ContainerRegister = styled.View`
   width: 100%;
   height: 100%;
+  background-color: #fff;
 `
 export const TitleRegister = styled(Text)`
   font-size: 30px;
@@ -17,7 +18,7 @@ export const ImageRegister = styled(Image)`
 `
 export const InputRegister = styled(TextInput)`
   margin: 10px 30px 20px 40px;
-  background-color: #eeeeee;
+  background-color: #fff;
 `
 export const BotonRegister = styled(Text)`
   margin: 50px;

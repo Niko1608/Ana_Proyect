@@ -1,3 +1,10 @@
+import { useForm, Controller } from 'react-hook-form'
+import {
+  DefaultTheme,
+  Provider as PaperProvider,
+  Text,
+} from 'react-native-paper'
+
 import {
   BotonRegister,
   ContainerRegister,
@@ -5,7 +12,6 @@ import {
   InputRegister,
   TitleRegister,
 } from '../../../styles/RegisterStyle'
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
 const theme = {
   ...DefaultTheme,
   colors: {
@@ -15,26 +21,76 @@ const theme = {
   },
 }
 const Register = () => {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
+  })
+  const onSubmit = (data: any) => console.log(data)
   return (
     <PaperProvider theme={theme}>
       <ContainerRegister>
         <ImageRegister source={require('../../../assets/coffe-register.jpg')} />
         <TitleRegister>Register</TitleRegister>
-        <InputRegister
-          label={'Email'}
-          theme={{ colors: { primary: '#635a51' } }}
+        <Controller
+          control={control}
+          rules={{
+            required: true,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <InputRegister
+              label="Email"
+              theme={{ colors: { primary: '#635a51' } }}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              value={value}
+            />
+          )}
+          name="email"
         />
-        <InputRegister
-          label="Password"
-          theme={{ colors: { primary: '#635a51' } }}
+        {errors.email && <Text>This is required.</Text>}
+        <Controller
+          control={control}
+          rules={{
+            required: true,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <InputRegister
+              label="Password"
+              theme={{ colors: { primary: '#635a51' } }}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              value={value}
+            />
+          )}
+          name="password"
         />
-        <InputRegister
-          label="Confirm Password"
-          theme={{ colors: { primary: '#635a51' } }}
+        {errors.password && <Text>This is required.</Text>}
+
+        <Controller
+          control={control}
+          rules={{
+            required: true,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <InputRegister
+              label="Confirm Password"
+              theme={{ colors: { primary: '#635a51' } }}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              value={value}
+            />
+          )}
+          name="confirmPassword"
         />
-        <BotonRegister onPress={() => console.log('Pressed')}>
-          Register
-        </BotonRegister>
+        {errors.confirmPassword && <Text>This is required.</Text>}
+        <BotonRegister onPress={handleSubmit(onSubmit)}>Register</BotonRegister>
       </ContainerRegister>
     </PaperProvider>
   )
