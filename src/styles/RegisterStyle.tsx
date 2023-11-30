@@ -6,6 +6,7 @@ export const ContainerRegister = styled.View`
   width: 100%;
   height: 100%;
   background-color: #fff;
+  gap: 20px;
 `
 export const TitleRegister = styled(Text)`
   font-size: 30px;
@@ -13,16 +14,17 @@ export const TitleRegister = styled(Text)`
   text-align: center;
 `
 export const ImageRegister = styled(Image)`
-  width: 100%;
+  width: 90%;
   height: 25%;
+  border-radius: 16px;
+  margin: 20px;
 `
 export const InputRegister = styled(TextInput)`
-  margin: 10px 30px 20px 40px;
+  margin: 0px 40px 0px 40px;
   background-color: #fff;
 `
-export const BotonRegister = styled(Text)`
-  margin: 50px;
-
+export const ButtonRegister = styled(Text)`
+  margin: 20px 40px 0px 40px;
   background-color: #635a51;
   padding: 10px;
   border-radius: 40px;
