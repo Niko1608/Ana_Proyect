@@ -10,7 +10,7 @@ import Start from '../start/index'
 const Stack = createNativeStackNavigator<AuthRoutesProps>()
 
 const AuthRouter = () => (
-  <Stack.Navigator>
+  <Stack.Navigator initialRouteName={AuthRoutes.Start}>
     <Stack.Screen
       name={AuthRoutes.Start}
       component={Start}
@@ -30,7 +30,7 @@ const AuthRouter = () => (
         headerLeft: () => (
           <IconButton
             icon="chevron-left"
-            onPress={() => navigation.goBack(Start)}
+            onPress={() => navigation.navigate(AuthRoutes.Start)}
           />
         ),
       })}
@@ -45,7 +45,7 @@ const AuthRouter = () => (
         headerLeft: () => (
           <IconButton
             icon="chevron-left"
-            onPress={() => navigation.goBack(Start)}
+            onPress={() => navigation.navigate(AuthRoutes.Start)}
           />
         ),
       })}

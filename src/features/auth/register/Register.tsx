@@ -1,3 +1,5 @@
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
+
 import {
   BotonRegister,
   ContainerRegister,
@@ -5,7 +7,6 @@ import {
   InputRegister,
   TitleRegister,
 } from '../../../styles/RegisterStyle'
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
 const theme = {
   ...DefaultTheme,
   colors: {
@@ -21,7 +22,7 @@ const Register = () => {
         <ImageRegister source={require('../../../assets/coffe-register.jpg')} />
         <TitleRegister>Register</TitleRegister>
         <InputRegister
-          label={'Email'}
+          label="Email"
           theme={{ colors: { primary: '#635a51' } }}
         />
         <InputRegister
