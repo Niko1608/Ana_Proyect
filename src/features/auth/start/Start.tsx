@@ -1,3 +1,4 @@
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import React from 'react'
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -14,6 +15,7 @@ import {
   TextHalf,
   ContainerButtonUnder,
 } from '../../../styles/StartStyle'
+import { AuthRoutesProps, AuthRoutes } from '../router/types'
 
 const theme = {
   ...DefaultTheme,
@@ -23,8 +25,8 @@ const theme = {
     text: '#635a51',
   },
 }
-
-const Start = () => {
+type StartScreenNavigationProp = NativeStackNavigationProp<AuthRoutesProps>
+const Start = ({ navigation }: { navigation: StartScreenNavigationProp }) => {
   return (
     <PaperProvider theme={theme}>
       <ContainerFather>
@@ -41,7 +43,7 @@ const Start = () => {
         <ContainerButtonLoginRegister>
           <ButtonRegister
             mode="contained"
-            onPress={() => console.log('Register Pressed')}
+            onPress={() => navigation.navigate(AuthRoutes.Register)}
             style={{ backgroundColor: '#BB816B' }}
             contentStyle={{ height: 50 }}
           >
@@ -49,7 +51,7 @@ const Start = () => {
           </ButtonRegister>
           <ButtonLogin
             mode="outlined"
-            onPress={() => console.log('Log In Pressed')}
+            onPress={() => navigation.navigate(AuthRoutes.Login)}
             contentStyle={{ height: 50 }}
             labelStyle={{ color: '#BB816B' }}
             style={{ borderColor: '#BB816B' }}
