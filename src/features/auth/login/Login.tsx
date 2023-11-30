@@ -37,8 +37,8 @@ const Login = () => {
         <LogInButton
           mode="contained"
           onPress={() => console.log('Log In Pressed')}
-          style={{ backgroundColor: '#BB816B' }} // Cambia el color de fondo aquí
-          contentStyle={{ height: 50 }} // Ajusta el estilo del contenido según sea necesario
+          style={{ backgroundColor: '#BB816B' }}
+          contentStyle={{ height: 50 }}
         >
           Log In
         </LogInButton>

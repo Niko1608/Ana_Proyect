@@ -38,59 +38,21 @@ const Register = () => {
       <ContainerRegister>
         <ImageRegister source={require('../../../assets/coffe-register.jpg')} />
         <TitleRegister>Register</TitleRegister>
-        <Controller
-          control={control}
-          rules={{
-            required: true,
-          }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <InputRegister
-              label="Email"
-              theme={{ colors: { primary: '#635a51' } }}
-              onChangeText={onChange}
-              onBlur={onBlur}
-              value={value}
-            />
-          )}
-          name="email"
+        <InputRegister
+          label="Email"
+          theme={{ colors: { primary: '#635a51' } }}
         />
-        {errors.email && <Text>This is required.</Text>}
-        <Controller
-          control={control}
-          rules={{
-            required: true,
-          }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <InputRegister
-              label="Password"
-              theme={{ colors: { primary: '#635a51' } }}
-              onChangeText={onChange}
-              onBlur={onBlur}
-              value={value}
-            />
-          )}
-          name="password"
+        <InputRegister
+          label="Password"
+          theme={{ colors: { primary: '#635a51' } }}
         />
-        {errors.password && <Text>This is required.</Text>}
-
-        <Controller
-          control={control}
-          rules={{
-            required: true,
-          }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <InputRegister
-              label="Confirm Password"
-              theme={{ colors: { primary: '#635a51' } }}
-              onChangeText={onChange}
-              onBlur={onBlur}
-              value={value}
-            />
-          )}
-          name="confirmPassword"
+        <InputRegister
+          label="Confirm Password"
+          theme={{ colors: { primary: '#635a51' } }}
         />
-        {errors.confirmPassword && <Text>This is required.</Text>}
-        <BotonRegister onPress={handleSubmit(onSubmit)}>Register</BotonRegister>
+        <BotonRegister onPress={() => console.log('Pressed')}>
+          Register
+        </BotonRegister>
       </ContainerRegister>
     </PaperProvider>
   )

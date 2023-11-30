@@ -1,7 +1,11 @@
-import { Text } from 'react-native'
+import React from 'react'
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
+import Icon from 'react-native-vector-icons/FontAwesome'
+
 import {
   ButtonUnder,
-  Buttons,
+  ButtonRegister,
+  ButtonLogin,
   ContainerButtonLoginRegister,
   ContainerFather,
   ContainerImage,
@@ -10,7 +14,6 @@ import {
   TextHalf,
   ContainerButtonUnder,
 } from '../../../styles/StartStyle'
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
 
 const theme = {
   ...DefaultTheme,
@@ -36,11 +39,34 @@ const Start = () => {
         </ContainerTextHalf>
 
         <ContainerButtonLoginRegister>
-          <Buttons>Register</Buttons>
-          <Buttons>login</Buttons>
+          <ButtonRegister
+            mode="contained"
+            onPress={() => console.log('Register Pressed')}
+            style={{ backgroundColor: '#BB816B' }}
+            contentStyle={{ height: 50 }}
+          >
+            Register
+          </ButtonRegister>
+          <ButtonLogin
+            mode="outlined"
+            onPress={() => console.log('Log In Pressed')}
+            contentStyle={{ height: 50 }}
+            labelStyle={{ color: '#BB816B' }}
+            style={{ borderColor: '#BB816B' }}
+          >
+            Log in
+          </ButtonLogin>
         </ContainerButtonLoginRegister>
         <ContainerButtonUnder>
-          <ButtonUnder>Connect Facebook</ButtonUnder>
+          <ButtonUnder
+            icon={({ size, color }) => (
+              <Icon name="facebook" size={size} color={color} />
+            )}
+            onPress={() => console.log('Connect with Facebook Pressed')}
+            labelStyle={{ color: '#1877f2' }}
+          >
+            Connect with Facebook
+          </ButtonUnder>
         </ContainerButtonUnder>
       </ContainerFather>
     </PaperProvider>
