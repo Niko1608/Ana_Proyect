@@ -29,6 +29,8 @@ const AuthRouter = () => (
         headerLeft: () => (
           <IconButton
             icon="chevron-left"
+            size={30}
+            style={{ marginLeft: 10 }}
             onPress={() => navigation.navigate(AuthRoutes.Start)}
           />
         ),
@@ -43,6 +45,8 @@ const AuthRouter = () => (
         headerLeft: () => (
           <IconButton
             icon="chevron-left"
+            size={30}
+            style={{ marginLeft: 10 }}
             onPress={() => navigation.navigate(AuthRoutes.Start)}
           />
         ),
