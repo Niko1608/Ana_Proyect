@@ -25,11 +25,6 @@ const AppRouter = () => (
           headerShown: false,
         }}
       />
-      <Stack.Screen
-        name={AdminRoutes.Home}
-        component={HomeRouter}
-        options={{ title: 'Home', headerTitleAlign: 'center' }}
-      />
     </Stack.Navigator>
   </NavigationContainer>
 )
