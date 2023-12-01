@@ -10,7 +10,7 @@ import Start from '../start/index'
 const Stack = createNativeStackNavigator<AuthRoutesProps>()
 
 const AuthRouter = () => (
-  <Stack.Navigator initialRouteName={AuthRoutes.Register}>
+  <Stack.Navigator initialRouteName={AuthRoutes.Start}>
     <Stack.Screen
       name={AuthRoutes.Start}
       component={Start}
