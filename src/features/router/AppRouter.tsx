@@ -14,7 +14,11 @@ const AppRouter = () => (
       <Stack.Screen
         name={AdminRoutes.Home}
         component={HomeRouter}
-        options={{ title: 'Home', headerTitleAlign: 'center' }}
+        options={{
+          title: 'Home',
+          headerTitleAlign: 'center',
+          headerShown: false,
+        }}
       />
       <Stack.Screen
         name={AdminRoutes.Auth}

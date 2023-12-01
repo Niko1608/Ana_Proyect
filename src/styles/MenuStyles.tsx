@@ -10,18 +10,18 @@ export const ContainerFather = styled.View`
 
 export const ContainerButton = styled.View`
   gap: 2px;
-  margin-top: 100px;
+  margin-top: 1px;
 `
 
 export const Buttons = styled.View`
   width: 100%;
-  height: 120px;
+  height: 141px;
   border-radius: 0px;
   background-color: #fff;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 120px;
+  gap: 100px;
 `
 export const Texts = styled.Text`
   font-size: 20px;
