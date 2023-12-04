@@ -5,7 +5,7 @@ export const ContainerPreferencesStyle = styled.View`
   width: 100%;
   height: 100%;
   background-color: #fff;
-  gap: 20px;
+  gap: 8px;
 `
 export const ContentImage = styled.View`
   width: 100%;
@@ -24,15 +24,20 @@ export const ConteinerText = styled.View`
 export const ContentText = styled.View`
   width: 100px;
   height: 30px;
+  margin-right: 10px;
+`
+
+export const BotonLeft = styled(Button)`
+  border-bottom-left-radius: 900px;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 400px;
+  border-top-left-radius: 700px;
   margin-left: 40px;
 `
-export const ContentButtom = styled.View`
-  flex-direction: row;
-  width: 10px;
-  height: 30px;
-`
-export const Boton = styled(Button)`
-  width: 100px;
-  height: 30px;
-  border-radius: 5px;
+export const BotonRight = styled(Button)`
+  border-bottom-left-radius: 400px;
+  border-top-right-radius: 700px;
+  border-bottom-right-radius: 900px;
+  border-top-left-radius: 100px;
+  margin-left: 5px;
 `
